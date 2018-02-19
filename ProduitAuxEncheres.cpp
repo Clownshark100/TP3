@@ -6,3 +6,39 @@
 
 #include "ProduitAuxEncheres.h"
 
+ProduitAuxEncheres::ProduitAuxEncheres(Fournisseur & fournisseur, const string & nom, int reference, double prix, TypeProduit type):Produit(*this), prixBase_(0), identifiantClient_(0)
+{
+}
+
+int ProduitAuxEncheres::obtenirIdentifiantClient() const
+{
+	return identifiantClient_;
+}
+
+double ProduitAuxEncheres::obtenirPrixBase() const
+{
+	return prixBase_;
+}
+
+void ProduitAuxEncheres::modifierIdentifiantClient(int identifiantClient)
+{
+	identifiantClient_ = identifiantClient;
+}
+
+void ProduitAuxEncheres::modifierPrixBase(double prixBase)
+{
+	prixBase_ = prixBase;
+}
+
+istream & operator >> (istream & is, ProduitAuxEncheres & produit)
+{
+	return is >> static_cast<Produit&>(produit);
+}
+
+ostream & operator<<(ostream & os, const ProduitAuxEncheres & produit)
+{
+	os << "Produit aux Encheres " << static_cast<const Produit&>(produit)
+		<< "Prix de base " << produit.obtenirPrixBase() << endl
+		<< "Identifiant Client " << produit.obtenirIdentifiantClient() << endl;
+	return os;
+}

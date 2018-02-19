@@ -1,19 +1,18 @@
 /********************************************
 * Titre: Travail pratique #3 - Produit.cpp
-* Date: 
-* Auteur: 
+* Date: 25 fevrier 2018
+* Auteur: Daniel Nahum et Loic LeBlanc
 *******************************************/
 
 #include "Produit.h"
 
-Produit::Produit(Fournisseur& fournisseur,const string& nom, int reference, double prix,TypeProduit type) 
-{
-	// à faire
+Produit::Produit(Fournisseur& fournisseur,const string& nom, int reference, double prix,TypeProduit type): fournisseur_(fournisseur), type_(type) {
+	fournisseur_.ajouterProduit(this);
 }
 
 
 Produit::~Produit() {
-	// à faire
+	fournisseur_.enleverProduit(this);
 }
 
 // Methodes d'acces
@@ -34,10 +33,10 @@ double Produit::obtenirPrix() const
 
 Fournisseur& Produit::obtenirFournisseur() const
 {
-	// à faire
+	return fournisseur_;
 }
 TypeProduit Produit::retournerType() {
- // à faire
+	return type_;
 }
 
 // Methodes de modification
