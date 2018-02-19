@@ -74,7 +74,7 @@ Usager &Usager::operator=(const Usager & usager)
 }
 
 bool Usager::operator==(int indentifiant) const {
-	return identifiant_ == identifiant_;
+	return identifiant_ == indentifiant;
 };
 bool Usager::operator == (const Usager & usager)
 {
@@ -88,7 +88,8 @@ ostream & operator<<(ostream & os, const Usager & usager)
 {
 	os << " Usager :";
 	os << "\t nom : " << usager.obtenirNom() << endl
-	   << "\t prenom : " << usager.obtenirPrenom() << endl
+		<< "\t prenom : " << usager.obtenirPrenom() << endl
+		<< "\t identifiant: " << usager.obtenirIdentifiant() << endl
 	   << "\t codePostal: " << usager.obtenirCodePostal() << endl;
 	return os;
 }

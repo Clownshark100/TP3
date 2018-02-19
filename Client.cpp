@@ -9,6 +9,10 @@
 
 
 
+Client::Client(const string & nom, const string & prenom, int identifiant, const string & codePostal, long date) : Usager(nom,prenom, identifiant, codePostal), dateNaissance_(date), monPanier_(nullptr)
+{
+}
+
 Client::~Client()
 {
 	if (monPanier_ != nullptr)
@@ -57,7 +61,7 @@ void Client::acheter(ProduitOrdinaire * prod)
 		monPanier_ = new Panier(this->obtenirIdentifiant());
 	monPanier_->ajouter(prod);
 	// obtenir une note aléatoire
-	int note = rand() % 6;
+	int note = rand() % 5;
 
 	// faire la mise à jour de la satisfaction au fournisseur
 	prod->obtenirFournisseur().noter(note);
@@ -103,7 +107,14 @@ Client & Client::operator=(const Client & client)
 ostream & operator<<(ostream & os, const Client & client)
 {
 	os << "Client: " << static_cast<Usager>(client) << endl;
-	os << "Le panier de " << client.obtenirNom() << ":" << endl << client.monPanier_;
+	os << "Le panier de " << client.obtenirNom() << ":";
+
+	if (client.monPanier_ == nullptr) {
+		os << " est vide!" << endl;
+	}
+	else {
+		os << endl << client.monPanier_;
+	}
 
 
 	return os;

@@ -6,7 +6,7 @@
 
 #include "Produit.h"
 
-Produit::Produit(Fournisseur& fournisseur,const string& nom, int reference, double prix,TypeProduit type): fournisseur_(fournisseur), type_(type) {
+Produit::Produit(Fournisseur& fournisseur,const string& nom, int reference, double prix,TypeProduit type): fournisseur_(fournisseur),nom_(nom), reference_(reference), prix_(prix), type_(type) {
 	fournisseur_.ajouterProduit(this);
 }
 
