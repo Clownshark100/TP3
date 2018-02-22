@@ -1,24 +1,30 @@
 /********************************************
 * Titre: Travail pratique #3 - Client.cpp
-* Date: 
-* Auteur: 
+* Date: 26 fevrier 2018
+* Auteur: Daniel Nahum et Loic LeBlanc
 *******************************************/
 
 #include "Client.h"
 #include "Fournisseur.h"
 
-
+/**
+* Constructeur par parametres.
+*/
 
 Client::Client(const string & nom, const string & prenom, int identifiant, const string & codePostal, long date) : Usager(nom,prenom, identifiant, codePostal), dateNaissance_(date), monPanier_(nullptr)
 {
 }
-
-Client::~Client()
+/**
+* destructeur de client, desalloue le panier du client.
+*/
+Client::~Client() 
 {
 	if (monPanier_ != nullptr)
 		delete monPanier_;
 }
-
+/**
+* Constructeur par copie.
+*/
 Client::Client(const Client & client) :
 	Usager(client.obtenirNom(), client.obtenirPrenom(), client.obtenirIdentifiant(), client.obtenirCodePostal()),	
 	dateNaissance_{ client.dateNaissance_ }
@@ -37,11 +43,16 @@ Client::Client(const Client & client) :
 
 
 // Methodes d'acces
+/**
+* accesseur de dateNaissance_
+*/
 long Client::obtenirDateNaissance() const
 {
 	return dateNaissance_;
 }
-
+/**
+* accesseur de monPanier_
+*/
 Panier * Client::obtenirPanier() const
 {
 	return monPanier_;
@@ -49,11 +60,16 @@ Panier * Client::obtenirPanier() const
 
 
 // Methodes de modification
+/**
+* Modification de dateNaissance_
+*/
 void Client::modifierDateNaissance(long date)
 {
 	dateNaissance_ = date;
 }
-
+/**
+* Ajoute un produit au panier.
+*/
 // Autres méthodes
 void Client::acheter(ProduitOrdinaire * prod)
 {
@@ -66,7 +82,9 @@ void Client::acheter(ProduitOrdinaire * prod)
 	// faire la mise à jour de la satisfaction au fournisseur
 	prod->obtenirFournisseur().noter(note);
 }
-
+/**
+* Vide le panier et le desalloue.
+*/
 void Client::livrerPanier()
 {
 	monPanier_->livrer();
@@ -74,7 +92,9 @@ void Client::livrerPanier()
 	monPanier_ = nullptr;
 }
 
-
+/**
+* Compare le montant miser au montant actuel et modifie le prix du produit et l'identifiant du client qui a mise.
+*/
 void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise) {
 	
 	if (produitAuxEncheres->obtenirPrix() < montantMise) {
@@ -83,10 +103,15 @@ void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montant
 	}
 
 }
-
+/**
+* Affecte les informations personelles et le panier du client original a la nouvelle copie.
+*/
 Client & Client::operator=(const Client & client)
 {
 	if (this != &client) {
+		this->modifierNom(client.obtenirNom());
+		this->modifierPrenom(client.obtenirPrenom());
+		this->modifierIdentifiant(client.obtenirIdentifiant());
 		Usager temp(*this);
 		temp = static_cast<Usager> (client);
 		dateNaissance_ = client.obtenirDateNaissance();
@@ -103,7 +128,9 @@ Client & Client::operator=(const Client & client)
 	return *this;
 }
 
-
+/**
+* Operateur d'affichage du client.
+*/
 ostream & operator<<(ostream & os, const Client & client)
 {
 	os << "Client: " << static_cast<Usager>(client) << endl;
@@ -113,7 +140,7 @@ ostream & operator<<(ostream & os, const Client & client)
 		os << " est vide!" << endl;
 	}
 	else {
-		os << endl << client.monPanier_;
+		os << endl << *(client.monPanier_);
 	}
 
 

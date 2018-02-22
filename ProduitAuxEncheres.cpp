@@ -10,6 +10,7 @@ ProduitAuxEncheres::ProduitAuxEncheres(Fournisseur & fournisseur, const string &
 {
 }
 
+
 int ProduitAuxEncheres::obtenirIdentifiantClient() const
 {
 	return identifiantClient_;

@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - Client.h
-* Date: 
-* Auteur: 
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+* La classe client est un usager qui a des informations personnelles et qui peut acheter et miser sur des produits.
 *******************************************/
 
 #ifndef CLIENT_H
@@ -18,7 +19,7 @@ class Client : public Usager
 {
 
 public:
-	Client(const string&  nom, const string& prenom, int identifiant, const string& codePostal, long date);
+	Client(const string&  nom, const string& prenom, int identifiant, const string& codePostal, long date) ;
 	~Client();
 	Client(const Client& client);
 	

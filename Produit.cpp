@@ -85,7 +85,7 @@ istream & operator>>(istream & is, Produit & produit)
 	return is >> produit.nom_ >> produit.reference_ >> produit.prix_ >> produit.type_;
 }
 
- ostream & operator<<(ostream & os, const Produit & produit)
+ostream & operator<<(ostream & os, const Produit & produit)
 {
 	 os << "Produit :"
 		 << " nom: " << produit.obtenirNom() << endl

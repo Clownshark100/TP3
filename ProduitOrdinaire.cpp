@@ -27,8 +27,11 @@ void ProduitOrdinaire::modifierEstTaxable(bool estTaxable)
 
 ostream & operator<<(ostream & os, const ProduitOrdinaire & produit)
 {
-	os << "Produit Ordinaire " << static_cast<const Produit&>(produit)
-		<< "est Taxable : " << produit.obtenirEstTaxable() << endl;
+	os << "Produit Ordinaire " << static_cast<const Produit&>(produit);
+	if (produit.obtenirEstTaxable())
+		os << "est Taxable : true" << endl;
+	else
+		os << "est Taxable : false" << endl;
 	return os;
 }
 

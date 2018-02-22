@@ -104,7 +104,10 @@ Produit* Panier::trouverProduitPlusCher()
 ostream & operator<<(ostream & os,  const Panier & panier)
 {
 	for (int i = 0; i < panier.contenuPanier_.size();i++) {
-		os << panier.contenuPanier_[i]->retournerType() << *(panier.contenuPanier_[i]);
+		if (panier.contenuPanier_[i]->retournerType() == 0)
+			os << static_cast<const ProduitOrdinaire&>(*(panier.contenuPanier_[i]));
+		else
+			os << static_cast<const ProduitAuxEncheres&>(*(panier.contenuPanier_[i]));
 	}
 	return os;
 }
