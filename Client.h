@@ -28,9 +28,9 @@ public:
 
 	void modifierDateNaissance(long date);
 
-	void acheter(ProduitOrdinaire * prod);
+	void acheter( ProduitOrdinaire * prod);
 	void livrerPanier();
-	void miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise);
+	void miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise) const;
 
 	Client& operator=(const Client& client);
 	friend ostream& operator<<(ostream& os, const Client& client);

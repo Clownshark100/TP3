@@ -1,7 +1,7 @@
 ﻿/**************************************************
 * Titre: Travail pratique #3 - main.cpp
-* Date: 
-* Auteur: 
+* Date: 26 Fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
 **************************************************/
 
 #include "Fournisseur.h"
@@ -17,10 +17,10 @@ const int  NB_PRODUCTS = 15;
 
 /**
 *Répondez aux questions ici :
-* 1/
+* 1/ Puisque les deux classes ProduitAuxEncheres et ProduitOrdinaire reprennent tout les attributs de la classe Produit.
 * 2/
-* 2.1
-* 2.2
+* 2.1 Le static_cast dans l'operateur de surcharge << dans panier permet d'aller chercher la methode derivee d'un produit de type different.
+* 2.2 Si on ne le considerait pas dans l'implementation, il utilisera la surcharge d'operateur de la classe de base.
 **/
 
 int main()

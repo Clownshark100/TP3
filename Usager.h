@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - Usager.h
-* Date:
-* Auteur:
+* Date: 26 Fevrier 2018
+* Auteur: Loic LeBLanc et Daniel Nahum
+* La classe Usager contient l'information d'un usager.
 *******************************************/
 
 #ifndef USAGER_H
@@ -28,7 +29,7 @@ public:
 
 	Usager & operator=(const Usager& usager);
 	bool operator==(int indentifiant) const;
-	bool operator == (const Usager & usager);
+	bool operator == (const Usager & usager)const;
 	friend bool operator==(int indentifiant, const Usager& usager);
 	friend ostream& operator<<(ostream& os, const Usager& u);
 

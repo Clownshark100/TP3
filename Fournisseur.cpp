@@ -1,39 +1,53 @@
 /********************************************
 * Titre: Travail pratique #3 - Fournisseur.cpp
-* Date: 
-* Auteur:
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
 *******************************************/
 #include "Fournisseur.h"
-
+/**
+* ¨Constructeur par parametres 
+*/
 Fournisseur::Fournisseur(const string & nom, const string & prenom, int identifiant, const string & codePostal) : Usager(nom, prenom, identifiant, codePostal), satisfaction_{ {0,0,0,0,0} }
 {
 }
-
+/**
+* accesseur de contenuCatalogue_.
+*/
 vector<Produit*> Fournisseur::obtenirCatalogue() const
 {
 	return contenuCatalogue_;
 }
-
+/**
+* accesseur de satisfaction_.
+*/
 Satisfaction Fournisseur::obtenirSatisfaction() const
 {
 	return satisfaction_;
 }
-
+/**
+* modificateur de satisfaction_.
+*/
 void Fournisseur::modifierSatisfaction(Satisfaction satisfaction)
 {
 	satisfaction_ = satisfaction;
 }
-
-void Fournisseur::noter(int appreciation)
+/**
+* Incrémente le niveau de satisfaction du fournisseur
+*/
+void Fournisseur::noter(const int appreciation) 
 {
 	satisfaction_.niveaux_[appreciation]++;
 }
-
+/**
+* ajoute un produit au catalogue
+*/
 void Fournisseur::ajouterProduit(Produit * produit)
 {
 	contenuCatalogue_.push_back(produit);
 }
-
+/**
+* enleve un produit du catalogue
+*/
 void Fournisseur::enleverProduit(Produit * produit)
 {
 	for (int i = 0; i < contenuCatalogue_.size(); i++) {
@@ -42,7 +56,9 @@ void Fournisseur::enleverProduit(Produit * produit)
 		}
 	}
 }
-
+/**
+* copie les attributs d'un fournisseur en parametre au fournisseur.
+*/
 Fournisseur & Fournisseur::operator=(const Fournisseur & fournisseur)
 {
 	Usager::operator=(fournisseur);
@@ -51,7 +67,9 @@ Fournisseur & Fournisseur::operator=(const Fournisseur & fournisseur)
 
 	return *this;
 }
-
+/**
+* affiche les attributs de fournisseur
+*/
 ostream & operator<<(ostream & os, Fournisseur & fournisseur)
 {
 	os << static_cast<Usager&>(fournisseur);
