@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - Fournisseur.h
-* Date: 
-* Auteur: 
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+* Fournisseur est un usager qui contient un catalogue de produits et l'appreciation du fournisseur.
 *******************************************/
 
 #ifndef FOURNISSEUR_H
@@ -26,7 +27,7 @@ public:
 	Satisfaction obtenirSatisfaction() const;
 	
 	void modifierSatisfaction(Satisfaction satisfaction);	
-	void noter(int appreciation);
+	void noter(const int appreciation);
 
 	void ajouterProduit(Produit* produit);
 	void enleverProduit(Produit* produit);	

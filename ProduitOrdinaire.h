@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - ProduitOrdinaire.h
-* Date: 
-* Auteur:
+* Date: 26 Fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+*ProduitOrdinaire est un produit qui peut etre taxable
 *******************************************/
 
 #ifndef PRODUITORDINAIRE_H

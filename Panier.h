@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - Panier.h
-* Date: 
-* Auteur: 
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+* Panier contient les produits acheter par le client, un identifiant du client et le total a payer.
 *******************************************/
 
 #ifndef PANIER_H
@@ -32,7 +33,7 @@ public:
 	void modifierIdClient(int idClient);
 
 	// TODO : Cette methode est a modifier
-	void ajouter(Produit * prod);
+	void ajouter( Produit * prod);
 	void livrer();
 
 	Produit* trouverProduitPlusCher();

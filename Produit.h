@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - Produit.h
-* Date: 
-* Auteur: 
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+* La classe Produit contient l'information sur le produit. 
 *******************************************/
 
 #ifndef PRODUIT_H

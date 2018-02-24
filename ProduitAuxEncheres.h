@@ -1,7 +1,8 @@
 /********************************************
 * Titre: Travail pratique #3 - ProduitAuxEncheres.h
-* Date: 
-* Auteur:
+* Date: 26 fevrier 2018
+* Auteur: Loic LeBlanc et Daniel Nahum
+* La classe ProduitAuxEncheres est un produit qui contient un prix de base et l'identifiant d'un client avec la plus haute mise.
 *******************************************/
 #ifndef PRODUITAUXENCHERES_H
 #define PRODUITAUXENCHERES_H

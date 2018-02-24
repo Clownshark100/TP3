@@ -71,7 +71,7 @@ void Client::modifierDateNaissance(long date)
 * Ajoute un produit au panier.
 */
 // Autres méthodes
-void Client::acheter(ProduitOrdinaire * prod)
+void Client::acheter( ProduitOrdinaire * prod)
 {
 	if (monPanier_ == nullptr)
 		monPanier_ = new Panier(this->obtenirIdentifiant());
@@ -95,7 +95,7 @@ void Client::livrerPanier()
 /**
 * Compare le montant miser au montant actuel et modifie le prix du produit et l'identifiant du client qui a mise.
 */
-void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise) {
+void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise) const {
 	
 	if (produitAuxEncheres->obtenirPrix() < montantMise) {
 		produitAuxEncheres->modifierPrix(montantMise);
