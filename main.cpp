@@ -17,9 +17,11 @@ const int  NB_PRODUCTS = 15;
 
 /**
 *Répondez aux questions ici :
-* 1/ Puisque les deux classes ProduitAuxEncheres et ProduitOrdinaire reprennent tout les attributs de la classe Produit.
+* 1/ Puisque les deux classes ProduitAuxEncheres et ProduitOrdinaire reprennent tous les attributs de la classe Produit.
+*    et que tous les ProduitAuxEncheres et ProduitOrdinaires sont des Produit
 * 2/
-* 2.1 Le static_cast dans l'operateur de surcharge << dans panier permet d'aller chercher la methode derivee d'un produit de type different.
+* 2.1 Le static_cast dans l'operateur de surcharge << dans panier permet d'appeler la surcharge de l'operateur<<
+	qui releve de l'objet enfant approprie.
 * 2.2 Si on ne le considerait pas dans l'implementation, il utilisera la surcharge d'operateur de la classe de base.
 **/
 
